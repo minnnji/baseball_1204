@@ -32,6 +32,7 @@ function ranN() {
                 next();
                 recordPrint();
             } else {
+            //3S 또는, 4B에 해당하지 않으면 계속 진행
             recordPrint()
             }
         } else {
