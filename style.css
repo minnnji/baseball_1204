@@ -2,11 +2,19 @@
     font-size: 30px;
 }
 
-.btn_start {
+.btn_start, .storage {
     padding: 20px;
     margin: 30px 0px;
-    width: 500px;
+    width: 200px;
     background-color: lightseagreen;
     text-align: center;
     font-size: 15px;
+}
+
+.btn_team {
+    display: inline-block;
+    margin: 10px 0px;
+    width: 100px;
+    border: 1px solid gray;
+    text-align: center;
 }
