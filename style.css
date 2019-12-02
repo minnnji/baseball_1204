@@ -18,3 +18,7 @@
     border: 1px solid gray;
     text-align: center;
 }
+
+.teamName1, .teamName2 {
+    width: 240px;
+}
