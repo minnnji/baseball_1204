@@ -17,6 +17,11 @@ th, td {
     background-color: lightskyblue;
 }
 
+#inning_top {
+    color: teal;
+    font-size: 20px;
+}
+
 .title {
     font-size: 30px;
 }
