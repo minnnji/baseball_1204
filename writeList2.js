@@ -1,8 +1,7 @@
-var teamName1 = document.getElementById('teamName1');
-var storage = document.querySelector('.storage');
+var teamName2 = document.getElementById('teamName2');
+var save = document.querySelector('.save');
 var list = document.getElementById('list');
-var ob1 = {};
-var obKeys;
+var ob2 = {};
 
 //input창 그리기
 for (var i = 1; i < 10; i++) {
@@ -12,6 +11,7 @@ for (var i = 1; i < 10; i++) {
     list.appendChild(inputBatter);
 
     var inputBA = document.createElement('input');
+    // inputBA.setAttribute('onkeyPress', 'onlyNumber()'); 
     inputBA.setAttribute('placeholder', '타율');
     inputBA.setAttribute('id', "BA"+i);
     list.appendChild(inputBA);
@@ -20,21 +20,21 @@ for (var i = 1; i < 10; i++) {
     list.appendChild(addBr);
 }
 
-//1팀 선수리스트 객체에 추가
-function teamList1() {
+//1팀 선수리스트 ob2객체에 추가
+function teamList2() {
     for(var i = 1; i < 10; i++) {
         var getName = document.getElementById(i).value;
         var getBA = document.getElementById("BA"+i).value;
-        ob1[getName] = getBA;
+        ob2[getName] = getBA;
     }
 }
 
-//유효성검사_미입력
+//유효성검사_미입력, 포커싱
 function emptyValue() {
     //팀명
-    if(! teamName1.value) {
-        alert(teamName1.placeholder);
-        teamName1.focus();
+    if(! teamName2.value) {
+        alert(teamName2.placeholder);
+        teamName2.focus();
         return;
     } else {
         for(var i = 1; i < 10; i++) {
@@ -53,15 +53,33 @@ function emptyValue() {
             }
         }
     }
+    rangeNumber();
 }
 
-storage.addEventListener("click", function() {
+//타율 숫자만 입력가능 >> 소수점 처리 필요..
+// function onlyNumber() {
+//     if(event.keyCode >= 48 && event.keyCode <= 57) {
+//         return true;
+//     } else {
+//         event.returnValue = false;
+//     }
+// }
+
+function rangeNumber() {
+    for(var i = 1; i < 10; i++) {
+        var eachIdBA = document.getElementById("BA"+i);
+        if(eachIdBA.value <= 0.1 || eachIdBA.value >= 0.5) {
+            alert('타율(h)은 0.1<h<0.5 범위 내 숫자로 입력되어야합니다.');
+        }
+    }
+}
+
+save.addEventListener("click", function() {
     emptyValue();
-    //팀명 로컬스토리지에 저장
-    localStorage.setItem('teamName1', teamName1.value);
-    teamList1();
-    //선수리스트 로컬스토리지에 저장
-    localStorage.setItem('team1', JSON.stringify(ob1));
-    obKeys = Object.keys(ob1);
+    teamList2();
+    //팀명 로컬스토리지에 string으로 저장
+    localStorage.setItem('teamName2', teamName2.value);
+    //선수리스트(ob2) 로컬스토리지에 string으로 저장
+    localStorage.setItem('team2', JSON.stringify(ob2));
     }
 );

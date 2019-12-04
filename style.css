@@ -1,24 +1,45 @@
+table {
+    text-align: center;
+}
+th, td {
+    border: 0.5px solid #bcbcbc;
+    width: 80px;
+}
+#teamName1, #teamName2 {
+    width: 240px;
+}
+
+#teamName1 {
+    background-color: lightpink;
+}
+
+#teamName2 {
+    background-color: lightskyblue;
+}
+
 .title {
     font-size: 30px;
 }
 
-.btn_start, .storage {
+input {
+    font-size: 17px;
+}
+
+.btn_start, .save {
     padding: 20px;
     margin: 30px 0px;
-    width: 200px;
+    width: 400px;
     background-color: lightseagreen;
     text-align: center;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .btn_team {
     display: inline-block;
     margin: 10px 0px;
-    width: 100px;
+    padding: 10px;
+    width: 200px;
     border: 1px solid gray;
     text-align: center;
-}
-
-.teamName1, .teamName2 {
-    width: 240px;
 }
