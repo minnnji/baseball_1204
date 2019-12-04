@@ -35,7 +35,7 @@ function emptyValue() {
     if(! teamName1.value) {
         alert(teamName1.placeholder);
         teamName1.focus();
-        return false;
+        return;
     } else {
         for(var i = 1; i < 10; i++) {
             var eachId = document.getElementById(i);
@@ -44,13 +44,13 @@ function emptyValue() {
             if(! eachId.value) {
                 alert(eachId.placeholder + "을 입력해주세요.");
                 eachId.focus();
-                return false;
+                return;
             //타율
             } else if(! eachIdBA.value) {
                 alert(eachIdBA.placeholder + "을 입력해주세요.");
                 eachIdBA.focus();
-                return false;
-            } else return true;
+                return;
+            }
         }
     }
     rangeNumber();

@@ -11,7 +11,7 @@ function ranN() {
     setTimeout(function() {
         //아웃 3회인 경우 게임오버
         if(record[2]<3) {
-            //스트라이크~아웃 랜덤 선정, 선정된 값 record에 반영 및 P태그로 추가
+            //스트라이크~안타 랜덤 선정, 선정된 값 record에 반영 및 P태그로 추가
             var randomNum = Math.floor(Math.random() * type.length)
             record[randomNum]++;
             var type_number = document.createTextNode(type[randomNum]);
